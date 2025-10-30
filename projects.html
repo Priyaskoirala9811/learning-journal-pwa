@@ -26,10 +26,56 @@
       <p>This page showcases some of my coursework and personal experiments.</p>
 
       <div class="cards">
+        <!-- Project 1 -->
         <article class="card project">
           <img src="images/placeholder-1x1.png" alt="Screenshot of Project One">
           <div class="project-content">
             <h2>Project One</h2>
             <p>A small web layout built using HTML and CSS with a focus on responsive design.</p>
-            <ul class="tags"><li>HTML</li><li>CSS</li><li>Responsive</li></ul>
-          </
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Responsive</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card project">
+          <img src="images/placeholder-1x1.png" alt="Screenshot of Project Two">
+          <div class="project-content">
+            <h2>Project Two</h2>
+            <p>An experimental interface for learning how to handle user input in a web app.</p>
+            <ul class="tags">
+              <li>Accessibility</li>
+              <li>UI</li>
+              <li>Layout</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Priyash Koirala — FGCT6021 Mobile Application Development</p>
+  </footer>
+
+  <script>
+    // mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const navEl = document.getElementById('site-nav');
+    if (toggle && navEl) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', (!expanded).toString());
+        navEl.classList.toggle('open');
+      });
+    }
+
+    // footer year auto-update
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
